@@ -1,0 +1,157 @@
+<div class="page" data-name="kunjungan">
+  <div class="navbar">
+    <div class="navbar-bg"></div>
+    <div class="navbar-inner sliding">  
+      <div class="left">
+        <a href="#" class="link back">
+          <i class="icon icon-back"></i>
+          <span class="if-not-md" style="font-size:14px;">Back</span>
+        </a>
+      </div>
+      <div class="title">Kunjungan</div>     
+      <div class="right">
+        <a href="#" class="col button button-outline tambah-info">
+          INFO
+        </a>
+      </div> 
+    </div>
+  </div>
+  <div class="page-content">
+    
+    <div class="list no-hairlines-md">
+      <ul>
+        <li class="item-content item-input">
+          <div class="item-inner">
+            <div class="item-title item-label">Nama Outlet</div>
+            <div class="item-input-wrap">
+              <input name="nama_outlet_kunjungan" id="nama_outlet_kunjungan" type="text" placeholder="Search..." required>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="list no-hairlines-md" style="text-align: center;">
+      <label style="font-size: small;"><label class="radio"><input type="radio" name="kondisi" id="Transaksi" value="Transaksi" checked><i class="icon-radio"></i></label>Transaksi</label>
+      <label style="font-size: small;"><label class="radio"><input type="radio" name="kondisi" id="Tutup" value="Tutup"><i class="icon-radio"></i></label>Tutup</label>
+      <label style="font-size: small;"><label class="radio"><input type="radio" name="kondisi" id="TKP" value="TKP"><i class="icon-radio"></i></label>TKP</label>
+      <label style="font-size: small;"><label class="radio"><input type="radio" name="kondisi" id="No" value="Tidak Transaksi"><i class="icon-radio"></i></label>No</label>
+      <label style="font-size: small;"><label class="radio"><input type="radio" name="kondisi" id="Macet" value="Macet"><i class="icon-radio"></i></label>Macet</label>
+    </div>
+
+    <div class="list no-hairlines-md">
+      <ul>
+        <li class="item-content item-input">
+          <div class="item-inner">
+            <div class="item-input-wrap">
+              <input name="nama_produk_kunjungan" id="nama_produk_kunjungan" type="text" placeholder="Search produk..." readonly>
+            </div>
+          </div>
+        </li>
+        <li class="item-content item-input">
+          <div class="item-inner">
+            <div class="item-input-wrap">
+              <input name="jumlah_kunjungan" id="jumlah_kunjungan" type="number" value="1">
+            </div>
+          </div>
+          <div class="item-inner">
+            <div class="item-input-wrap">
+              <button class="add col button color-blue" style="height: 40px;"><i class="fa fa-send-o"></i> Tambah</button>
+            </div>
+          </div>          
+        </li>
+      </ul>
+    </div>    
+
+    <div class="list no-hairlines-md" style="text-align: center;">
+      <label style="font-size: small;"><label class="radio"><input type="radio" name="tipe_pembelian_kunjungan" id="JPCD"><i class="icon-radio"></i></label>JPCD</label>
+      <label style="font-size: small;"><label class="radio"><input type="radio" name="tipe_pembelian_kunjungan" id="JPCB"><i class="icon-radio"></i></label>JPCB</label>
+      <label style="font-size: small;"><label class="radio"><input type="radio" name="tipe_pembelian_kunjungan" id="JPTD"><i class="icon-radio"></i></label>JPTD</label>
+      <label style="font-size: small;"><label class="radio"><input type="radio" name="tipe_pembelian_kunjungan" id="JPTB"><i class="icon-radio"></i></label>JPTB</label>
+      <label style="font-size: small;"><label class="radio"><input type="radio" name="tipe_pembelian_kunjungan" id="KONS" checked><i class="icon-radio"></i></label>KONS</label>
+    </div>
+
+    <div class="data-table card">
+      <table>
+        <thead>
+          <tr>
+            <th class="label-cell" style="text-align: center;">NO</th>
+            <th class="label-cell" style="text-align: left;">PRODUK</th>
+            <th class="numeric-cell" style="text-align: center;">HARGA</th>
+            <th class="numeric-cell" style="text-align: center;">QTY</th>
+            <th class="numeric-cell" style="text-align: center;">SUBTOTAL</th>
+            <th class="label-cell" style="text-align: left;"></th>
+          </tr>
+        </thead>
+        <thead id="cartBody">
+          <tr>
+            <td class="label-cell" style="text-align: center;"></td>
+            <td class="label-cell" style="text-align: left;"></td>
+            <td class="numeric-cell" style="text-align: center;"></td>
+            <td class="numeric-cell" style="text-align: center;"></td>
+            <td class="numeric-cell" style="text-align: center;"></td>
+            <td class="label-cell" style="text-align: left;">
+            </td>
+          </tr>
+        </thead>
+        <thead>
+          <tr>
+            <th colspan="4" class="label-cell" style="text-align: right;">Total Harga</th>
+            <th class="numeric-cell" style="text-align: center;"><div id="totalCart"></div></th>
+            <th class="numeric-cell" style="text-align: center;"></th>
+          <tr>
+        </thead>
+      </table>
+    </div>
+
+    <!-- Hidden form -->
+    <input type="hidden" name="status" id="status" value="UNDELIVER">
+    <input type="hidden" name="no_nota_penjualan" id="no_nota_penjualan">
+    <input type="hidden" name="nama_admin" id="nama_admin">
+    <input type="hidden" name="nama_salesman" id="nama_salesman">
+    <input type="hidden" name="rute_kunjungan" id="rute_kunjungan">
+    <input type="hidden" name="id_outlet_kunjungan" id="id_outlet_kunjungan">
+    <input type="hidden" name="nama_produk_alias" id="nama_produk_alias">
+    <input type="hidden" name="tipe_pembelian" id="tipe_pembelian" value="KONSINYASI">
+    <input type="hidden" name="tempo" id="tempo" value="1">
+    <input type="hidden" name="id_file" id="id_file" value="KOSONG">
+    <input type="hidden" name="id_produk" id="id_produk">
+    <input type="hidden" name="isi_kemasan" id="isi_kemasan">
+    <input type="hidden" name="tanggal" id="tanggal">
+    <input type="hidden" name="tanggal_bikin" id="tanggal_bikin">
+    <!-- End Hidden form -->
+
+    <!-- harga -->
+    <input type="hidden" name="harga_beli" id="harga_beli">
+    <input type="hidden" name="harga_gb_200_dus" id="harga_gb_200_dus">
+    <input type="hidden" name="harga_gb_150_dus" id="harga_gb_150_dus">
+    <input type="hidden" name="harga_gb_50_dus" id="harga_gb_50_dus">
+    <input type="hidden" name="harga_gb_k_50_dus" id="harga_gb_k_50_dus">
+    <input type="hidden" name="harga_jpc_dus" id="harga_jpc_dus">
+    <input type="hidden" name="harga_jpc_botol" id="harga_jpc_botol">
+    <input type="hidden" name="harga_jpt_dus" id="harga_jpt_dus">
+    <input type="hidden" name="harga_jpt_botol" id="harga_jpt_botol">
+    <input type="hidden" name="harga_ky_t_bayar" id="harga_ky_t_bayar">
+    <input type="hidden" name="harga_ky_r_jual" id="harga_ky_r_jual">
+    <!-- harga -->
+
+    <!-- Hidden Form Piutang -->
+    <input type="hidden" name="piutang_tanggal" id="piutang_tanggal">
+    <input type="hidden" name="piutang_no_nota_penjualan" id="piutang_no_nota_penjualan">
+    <input type="hidden" name="piutang_tanggaljatuhtempo" id="piutang_tanggaljatuhtempo">
+    <input type="hidden" name="piutang_nominal_nota_penjualan" id="piutang_nominal_nota_penjualan">
+    <input type="hidden" name="piutang_tanggalbayar" id="piutang_tanggalbayar">
+    <input type="hidden" name="piutang_status" id="piutang_status" value="Belum">
+    <input type="hidden" name="piutang_terbayar" id="piutang_terbayar" value="0">
+    <!-- Hidden Form Piutang -->
+	
+	  <div class="block row">              
+      <div class="col"><button class="col button button-fill color-yellow" id="cek_logo" style="height: 40px;"><i class="fa fa-print"></i> Print</button></div>
+    </div>
+
+    <div class="block row">              
+      <div class="col"><button class="col button button-fill color-blue" id="button_kunjungan" style="height: 40px;"><i class="fa fa-send-o"></i> Submit</button></div>
+    </div>
+    
+  </div>
+</div>

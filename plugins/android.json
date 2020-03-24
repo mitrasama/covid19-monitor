@@ -1,0 +1,21 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-geolocation": {
+      "PACKAGE_NAME": "com.abdul.apkku"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.abdul.apkku"
+    },
+    "cordova-plugin-btprinter": {
+      "PACKAGE_NAME": "com.abdul.apkku"
+    }
+  },
+  "dependent_plugins": {}
+}
