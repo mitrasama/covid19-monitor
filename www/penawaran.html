@@ -1,0 +1,45 @@
+<div class="page" data-name="penawaran">
+  <div class="navbar">
+    <div class="navbar-bg"></div>
+    <div class="navbar-inner sliding">
+      <div class="left">
+        <a href="#" class="link back">
+          <i class="icon icon-back"></i>
+          <span class="if-not-md" style="font-size:14px;">Back</span>
+        </a>
+      </div>
+      <div class="title">Penawaran</div>
+    </div>
+  </div>
+  <div class="page-content">
+    <div class="list no-hairlines-md">
+      <ul>
+        <li class="item-content item-input">
+          <div class="item-inner">
+            <div class="item-title item-label">Nama Outlet</div>
+            <div class="item-input-wrap">
+              <input name="nama_outlet_penawaran" id="nama_outlet_penawaran" type="text" placeholder="Search..." required>
+              <input type="hidden" name="id_outlet_penawaran" id="id_outlet_penawaran">
+            </div>
+          </div>
+        </li>
+        <li class="item-content item-input">
+          <div class="item-inner">
+            <div class="item-title item-label">Tipe Pembelian</div>
+            <div class="item-input-wrap">
+              <select placeholder="Please choose..." name="tipe_pembelian_penawaran" id="tipe_pembelian_penawaran" required>
+                <option value="">-</option>
+                <option value="J">Jual Putus</option>
+                <option value="K">Kosinyasi</option>
+                <option value="G">Group Buying</option>
+              </select>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="block row">              
+      <div class="col"><button class="col button button-fill color-green" id="button_penawaran" style="height: 40px;"><i class="fa fa-save"></i> Simpan</button></div>
+    </div>
+  </div>
+</div>
