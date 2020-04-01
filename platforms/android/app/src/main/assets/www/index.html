@@ -5,63 +5,422 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui, viewport-fit=cover">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="theme-color" content="#2196f3">
-    <title>M-Portalindo</title>
+    <title>Covid19 NOW</title>
     <link rel="stylesheet" href="lib/framework7/css/framework7.ios.min.css">
     <link rel="stylesheet" href="css/icons.css">
     <link rel="stylesheet" href="css/styles.css">
-	  <script src="cordova.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-	  <link rel="stylesheet" href="css/signature.css">
   </head>
   <body>
     <div id="app">
       <div class="statusbar"></div>
       <div class="view view-main">
-        <div data-name="home" class="page">
+        <div class="page" data-name="home" style="background-color: #ffffff;">
           <div class="navbar">
+            <div class="navbar-bg"></div>
             <div class="navbar-inner">
-            	<div class="left"></div>
-              <div class="title">M-Portalindo</div>
-              <div class="right"></div>
+              <!-- <div class="left">
+                <span class="if-not-md" style="font-size:12px;" id="txt"></span>
+              </div> -->
+              <div class="title center">Covid19 NOW</div>
+              <div class="right">
+                <a class="button-raised open-with-button" href="#">
+                  <i class="icon f7-icons if-not-md">person_fill<span class="badge color-red">?</span></i>
+                </a>
+              </div>
             </div>
           </div>
-          <div class="page-content">
-            <form class="list" id="form-login">
-              <ul>
-                <li>
-                  <div class="item-content item-input">
-                    <div class="item-inner">
-                      <div class="item-title item-label">Username</div>
-                      <div class="item-input-wrap">
-                        <input type="text" name="username" id="username" placeholder="username">
-                      </div>
+          <div class="toolbar tabbar toolbar-bottom" style="height: 60px; background-color: #081d32;">
+            <div class="toolbar-inner">
+              <a href="#home" class="tab-link tab-link-active">
+                <i class="fa fa-500px fa-lg"></i>
+                <span class="tabbar-label" style="font-size:11px;">Home</span>
+              </a>
+              <a href="#geocovid" class="tab-link">
+                <i class="fa fa-globe fa-lg"></i>
+                <span class="tabbar-label" style="font-size:11px;">Geocovid</span>
+              </a>
+              <a href="#lockdown" class="tab-link">
+                <i class="fa fa-warning fa-lg"></i>
+                <span class="tabbar-label" style="font-size:11px;">Lockdown</span>
+              </a>
+              <a href="#faq" class="tab-link">
+                <i class="fa fa-question-circle fa-lg"></i>
+                <span class="tabbar-label" style="font-size:11px;">Faq</span>
+              </a>
+            </div>
+          </div>
+          <div class="tabs">
+            <div id="lockdown" class="page-content tab">      
+              <div class="data-table data-table-init card">
+                <div class="card-header">
+                  <div class="data-table-title">Pandemi Nasional</div>
+                  <div class="data-table-actions">
+                    <a class="link icon-only">
+                      <i class="icon f7-icons if-not-md">sort</i>
+                      <i class="icon material-icons md-only">sort</i>
+                    </a>
+                    <a class="link icon-only">
+                      <i class="icon f7-icons if-not-md">more_vertical_round</i>
+                      <i class="icon material-icons md-only">more_vert</i>
+                    </a>
+                  </div>
+                </div>
+                <div class="card-content">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th class="checkbox-cell"></th>
+                        <th class="label-cell sortable-cell sortable-cell-active">Daerah Provinsi</th>
+                        <th class="numeric-cell sortable-cell">Jumlah Positif</th>
+                      </tr>
+                    </thead>
+                    <tbody id="show_data">
+                      
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <br>
+            </div>
+            <div id="home" class="page-content tab tab-active">
+              <div class="card demo-card-header-pic">
+                <div class="card-content">
+                  <div data-speed="900" data-pagination='{"el": ".swiper-pagination"}' data-space-between="50" class="swiper-container swiper-init demo-swiper">
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide"><img src="./image/banner1.jpg" width="100%"/></div>
+                      <div class="swiper-slide"><img src="./image/banner2.jpg" width="100%"/></div>
+                      <div class="swiper-slide"><img src="./image/banner3.jpg" width="100%"/></div>
                     </div>
                   </div>
-                </li>
-                <li>
-                  <div class="item-content item-input">
-                    <div class="item-inner">
-                      <div class="item-title item-label">Password</div>
-                      <div class="item-input-wrap">
-                        <input type="password" name="password" id="password" placeholder="password">
+                </div>
+                <div class="card-content card-content-padding">
+                  <p class="date">Sudah mengenal covid19 ?</p>
+                  <p>Corona Virus Disease 2019 atau COVID-19 adalah penyakit menular yang disebabkan oleh SARS-CoV-2 salah satu jenis koronavirus.</p>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header">World Infection Covid19</div>
+                <div class="card-content">
+                  <div class="list media-list">
+                    <ul>
+                      <li class="item-content">
+                        <div class="item-media"><img src="./image/confirmed.jpg" width="44"/></div>
+                        <div class="item-inner">
+                          <div class="item-title-row">
+                            <div class="item-title">Kasus Terkonfirmasi</div>
+                          </div>
+                          <div class="item-subtitle" id="confirmed"><i class="fa fa-spinner fa-spin"></i></div>
+                        </div>
+                      </li>
+                      <li class="item-content">
+                        <div class="item-media"><img src="./image/recovered.jpg" width="44"/></div>
+                        <div class="item-inner">
+                          <div class="item-title-row">
+                            <div class="item-title">Pasien Sembuh</div>
+                          </div>
+                          <div class="item-subtitle" id="recovered"><i class="fa fa-spinner fa-spin"></i></div>
+                        </div>
+                      </li>
+                      <li class="item-content">
+                        <div class="item-media"><img src="./image/death.jpg" width="44"/></div>
+                        <div class="item-inner">
+                          <div class="item-title-row">
+                            <div class="item-title">Tidak Tertolong</div>
+                          </div>
+                          <div class="item-subtitle" id="death"><i class="fa fa-spinner fa-spin"></i></div>
+                        </div>
+                      </li>
+                      <li class="item-content">
+                        <div class="item-media"><img src="./image/active.jpg" width="44"/></div>
+                        <div class="item-inner">
+                          <div class="item-title-row">
+                            <div class="item-title">Kasus Indonesia</div>
+                          </div>
+                          <div class="item-subtitle" id="active"><i class="fa fa-spinner fa-spin"></i></div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="card-footer"> <span><div id="tanggal"></div></span><span id="txt"></span></div>
+              </div>
+              <br>
+            </div>
+            <div id="geocovid" class="page-content tab">      
+              <div id="map_canvas" style="width:100%;height:100%; position:absolute;"></div>
+            </div>
+            <div id="faq" class="page-content tab">
+              <div class="list accordion-list accordion-opposite">
+                <ul>
+                  <li class="accordion-item">
+                    <a class="item-content item-link" href="#">
+                      <div class="item-inner">
+                        <div class="item-title">Apakah Orang tua rentan terkena covid19 ?</div>
+                      </div>
+                    </a>
+                    <div class="accordion-item-content">
+                      <div class="block">
+                        <p>Tidak hanya manula, bahkan generasi muda pun dapat tertular COVID-19 jika tidak menjaga diri. Biasanya, manula memang rentan terkena COVID-19 dikarenakan sistem imun tubuh yang sudah tidak seprima dulu. Selain itu, manula yang memiliki riwayat penyakit seperti hipertensi, diabetes, penyakit pernapasan, atau penyakit parah lainnya memiliki kemungkinan besar untuk tertular COVID-19 akut.</p>
                       </div>
                     </div>
-                  </div>
-                </li>
-              </ul>
-            </form>
-            <div class="block row">              
-              <div class="col"><button class="col button button-fill color-red" id="button_clear" style="height: 40px;"><i class="fa fa-refresh"></i> Clear</button></div>
-              <div class="col"><button class="col button button-fill color-green" id="button_login" style="height: 40px;"><i class="fa fa-sign-in"></i> Login</button></div>
+                  </li>
+                  <li class="accordion-item">
+                    <a class="item-content item-link" href="#">
+                      <div class="item-inner">
+                        <div class="item-title">Apakah covid19 perlu dikhawatirkan ?</div>
+                      </div>
+                    </a>
+                    <div class="accordion-item-content">
+                      <div class="block">
+                        <p>Sebanyak 80 persen kasus COVID-19 bersifat "ringan", sehingga perawatan yang cukup dapat memulihkan mereka segera dalam waktu cepat. Namun, dikarenakan penyebarannya yang cepat, diimbau untuk tetap waspada pada penyebaran COVID-19. Jika Anda merasakan gejala-gejalanya, maka jangan ragu untuk menghubungi Hotline 024-3580713 atau ke fasilitas kesehatan terdekat.</p>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="accordion-item">
+                    <a class="item-content item-link" href="#">
+                      <div class="item-inner">
+                        <div class="item-title">Apakah covid19 sama dengan sars dan mers ?</div>
+                      </div>
+                    </a>
+                    <div class="accordion-item-content">
+                      <div class="block">
+                        <p>Severe Acute Respiratory Syndrome (SARS-CoV) yang berawal dari 2003 dan Middle East Respiratory Syndrome (MERS-CoV) pada 2012 memang sama-sama menyerang pernapasan, sama seperti COVID-19. Meskipun disebabkan oleh jenis virus yang sama, COVID-19, dan MERS serta SARS memiliki jenis virus corona yang berbeda. Dari segi penularan, COVID-19 jauh lebih pesat dibandingkan SARS dan MERS.</p>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="accordion-item">
+                    <a class="item-content item-link" href="#">
+                      <div class="item-inner">
+                        <div class="item-title">Perlukah saya menggunakan masker ?</div>
+                      </div>
+                    </a>
+                    <div class="accordion-item-content">
+                      <div class="block">
+                        <p>Berhenti membeli atau menggunakan masker jika memang tidak perlu (sehat). Dikarenakan praktik beli massal, WHO sempat mengumumkan status krisis masker. Hal tersebut sebenarnya dapat dicegah dengan tidak melakukan panic buying dan hoarding. Jika Anda ingin bersin atau batuk, gunakan tisu atau siku tangan untuk menutup hidung dan mulut, bukan masker. Selain itu, jaga jarak 1 - 3 meter agar orang tidak terkena droplet dari Anda.</p>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="accordion-item">
+                    <a class="item-content item-link" href="#">
+                      <div class="item-inner">
+                        <div class="item-title">Apakah covid19 melekat pada benda mati ?</div>
+                      </div>
+                    </a>
+                    <div class="accordion-item-content">
+                      <div class="block">
+                        <p>Ya. COVID-19 dapat menempel pada benda mati atau barang selama beberapa jam atau beberapa hari jika tidak secepatnya dibersihkan dengan disinfektan. Akan tetapi, ketahanan COVID-19 menempel pada satu benda tergantung dari beberapa faktor seperti suhu, kelembapan, dan jenis permukaan. Sesudah membersihkan barang yang terpapar COVID-19 dengan disinfektan, segera bersihkan tangan dengan alkohol atau sabun. Hindari menyentuh mata, hidung dan mulut.</p>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="accordion-item">
+                    <a class="item-content item-link" href="#">
+                      <div class="item-inner">
+                        <div class="item-title">Apakah covid19 sudah ada obatnya ?</div>
+                      </div>
+                    </a>
+                    <div class="accordion-item-content">
+                      <div class="block">
+                        <p>Hingga saat ini, vaksin dan obat untuk COVID-19 masih dalam tahap penelitian. Pengobatan masih berupa pengobatan suportif.</p>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="accordion-item">
+                    <a class="item-content item-link" href="#">
+                      <div class="item-inner">
+                        <div class="item-title">Apakah covid19 menular lewat hewan ?</div>
+                      </div>
+                    </a>
+                    <div class="accordion-item-content">
+                      <div class="block">
+                        <p>WHO menyatakan bahwa COVID-19 tidak dapat ditularkan dari hewan peliharaan apapun, baik anjing maupun kucing. Tidak ada dasar ilmiah yang mendukung penyebaran COVID-19 lewat hewan peliharaan. Namun Anda tetap perlu menjaga kebersihan dengan rajin mencuci tangan setelah melakukan kontak dengan hewan peliharaan.</p>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="accordion-item">
+                    <a class="item-content item-link" href="#">
+                      <div class="item-inner">
+                        <div class="item-title">Apa yang bisa kita lakukan ?</div>
+                      </div>
+                    </a>
+                    <div class="accordion-item-content">
+                      <div class="block">
+                        <p>Tidak merokok dan tidak menggunakan masker berlapis-lapis. Jika Anda memang mengalami gejala-gejala COVID-19, segera hubungi Hotline 024-3580713 atau laporkan diri ke rumah sakit rujukan virus corona.</p>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="accordion-item">
+                    <a class="item-content item-link" href="#">
+                      <div class="item-inner">
+                        <div class="item-title">Apakah antibiotik dapat mencegah covid19</div>
+                      </div>
+                    </a>
+                    <div class="accordion-item-content">
+                      <div class="block">
+                        <p>Tidak. Antibiotik tidak dapat melawan virus, melainkan hanya melawan infeksi bakteri. COVID-19 disebabkan oleh virus sehingga antibiotik tidak efektif. Antibiotik tidak boleh digunakan untuk mencegah atau mengobati COVID-19. Antibiotik hanya digunakan sesuai arahan dokter untuk mengobati infeksi bakteri.</p>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="accordion-item">
+                    <a class="item-content item-link" href="#">
+                      <div class="item-inner">
+                        <div class="item-title">Ada keluarga yang menunjukan gejala ?</div>
+                      </div>
+                    </a>
+                    <div class="accordion-item-content">
+                      <div class="block">
+                        <p>Bila ada anggota keluarga yang mengalami demam, rasa lelah atau batuk kering, cari pertolongan pada sarana kesehatan dan ikuti perintah tenaga kesehatan. Bila diminta rawat di rumah dan Anda mampu, tempatkan anggota keluarga itu di ruang terpisah yang memiliki akses ke kamar mandi. Anggota keluarga itu harus memakai masker dan menghindari kontak dengan anggota keluarga lainnya dan tidak boleh meninggalkan rumah kecuali berobat.</p>
+
+                        <p>Meski terisolasi, Anda masih dapat menunjukkan kasih sayang dan perhatian dengan tetap berkomunikasi via telepon atau WA, bantu mengerjakan tugas-tugasnya yang terbengkalai dan menyediakan makanan untuknya. Secara teratur bersihkan permukaan benda-benda atau bagian-bagian di rumah yang sering disentuh tangan dengan disinfektan termasuk kamar mandi yang digunakan anggota keluarga yang tengah diisolasi setiap selesai digunakan.</p>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="accordion-item">
+                    <a class="item-content item-link" href="#">
+                      <div class="item-inner">
+                        <div class="item-title">Adakah obat khusus untuk mencegah virus corona ?</div>
+                      </div>
+                    </a>
+                    <div class="accordion-item-content">
+                      <div class="block">
+                        <p>Sampai saat ini, belum ada obat khusus yang disarankan untuk mencegah atau mengobati penyakit yang disebabkan virus corona baru (COVID-19). Mereka yang terinfeksi virus harus menerima perawatan yang tepat untuk meredakan dan mengobati gejala, dan mereka yang sakit serius harus dibawa ke rumah sakit. Sebagian besar pasien sembuh karena perawatan untuk gejala yang dialami.</p>
+
+                        <p>Beberapa perawatan spesifik saat ini tengah diteliti, dan akan melalui uji klinis. WHO membantu mempercepat upaya penelitian dan pengembangan dengan sejumlah mitra.</p>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="accordion-item">
+                    <a class="item-content item-link" href="#">
+                      <div class="item-inner">
+                        <div class="item-title">Apa saja pengobatan infeksi corona ?</div>
+                      </div>
+                    </a>
+                    <div class="accordion-item-content">
+                      <div class="block">
+                        <p>Saat ini belum ada pengobatan khusus yang efektif untuk infeksi virus corona baru. Vaksin mungkin baru bisa tersedia 18 bulan ke     depan (2021). Sementara ini, cara terbaik adalah melakukan tindakan pencegahan, yaitu: Sering suci tangan pakai sabun dan air mengalir
+                          Hindari menyentuh muka, Jauhi orang yang menunjukkan gejala (demam, batuk kering, kelelahan), Bila Anda mengalami demam, rasa lelah dan batuk kering, segera cari pengobatan, Anda dapat menguatkan sistem kekebalan diri dengan melakukan perilaku sehat, seperti olah raga teratur, makan makanan bergizi seimbang, tidak merokok dan memastikan Anda dan anak Anda mendapat imunisasi lengkap.</p>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="accordion-item">
+                    <a class="item-content item-link" href="#">
+                      <div class="item-inner">
+                        <div class="item-title">Apa saja gejala infeksi corona ?</div>
+                      </div>
+                    </a>
+                    <div class="accordion-item-content">
+                      <div class="block">
+                        <p>Bila seseorang terinfeksi virus, dia akan menunjukkan gejala dalam 1-14 hari sejak terpapar virus. Gejala umumnya adalah demam
+                          rasa lelah, batuk, kering.</p>
+                        <p>Sebagian besar orang hanya akan mengalami gejala ringan, namun di kasus-kasus yang tertentu, infeksi dapat menyebabkan pnemonia dan kesulitan bernapas. Pada sebagian kecil kasus, infeksi virus corona bisa berakibat fatal. Orang lanjut usia (lansia) dan orang-orang dengan masalah kesehatan seperti tekanan darah tinggi, gangguan jantung atau diabetes kemungkinan mengalami sakit lebih serius.</p>
+                        
+                        <p>Karena gejala-gejalanya mirip flu biasa, maka perlu dilakukan tes untuk memastikan apakah seseorang terinfeksi virus corona. Tes tersedia di rumah sakit-rumah sakit rujukan bagi orang yang mengalami gejala-gejala atas dasar perintah dokter.</p>
+                        
+                        <p>Kunci pencegahan virus corona (COVID-19): Sering suci tangan pakai sabun dan air mengalir, hindari menyentuh muka, jauhi orang yang menunjukkan gejala (demam, batuk kering, kelelahan), bila batuk atau bersin: tutup mulut dan hidung dengan siku terlipat atau tisu yang dibuang langsung ke tempat sampah tertutup setelah dipakai.</p>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="accordion-item">
+                    <a class="item-content item-link" href="#">
+                      <div class="item-inner">
+                        <div class="item-title">Apa yang dimaksud Pandemi ?</div>
+                      </div>
+                    </a>
+                    <div class="accordion-item-content">
+                      <div class="block">
+                        <p>WHO (World Health Organization atau Badan Kesehatan Dunia) secara resmi mendeklarasikan virus corona (COVID-19) sebagai pandemi pada tanggal 9 Maret 2020. Artinya, virus corona telah menyebar secara luas di dunia. Istilah pandemi terkesan menakutkan tapi sebenarnya itu tidak ada kaitannya dengan keganasan penyakit tapi lebih pada penyebarannya yang meluas. Ingat, pada umumnya virus corona menyebabkan gejala yang ringan atau sedang, seperti demam dan batuk, dan kebanyakan bisa sembuh dalam beberapa minggu.</p>
+                          
+                        <p>Tapi bagi sebagian orang yang berisiko tinggi (kelompok lanjut usia dan orang dengan masalah kesehatan menahun, seperti penyakit jantung, tekanan darah tinggi, atau diabetes), virus corona dapat menyebabkan masalah kesehatan yang serius. Kebanyakan korban berasal dari kelompok berisiko itu. Karena itulah penting bagi kita semua untuk memahami cara mengurangi risiko, mengikuti perkembangan informasi dan tahu apa yang dilakukan bila mengalami gejala. Dengan demikian kita bisa melindungi diri dan orang lain.</p>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="accordion-item">
+                    <a class="item-content item-link" href="#">
+                      <div class="item-inner">
+                        <div class="item-title">Bagaimana jika anak menunjukan gejala corona ?</div>
+                      </div>
+                    </a>
+                    <div class="accordion-item-content">
+                      <div class="block">
+                        <p>Segera cari petolongan medis namun ingat bahwa gejala-gejala infeksi virus corona yang baru ini (batuk atau demam) sebetulnya tidak berbeda dengan gejala-gejala flu biasa. Terus lakukan perilaku bersih cuci tangan pakai sabun dan pastikan anak telah diimunisasi sehingga anak Anda terlindungi dari virus dan penyakit lain. Hindari tempat umum (tempat kerja, sekolah, transportasi umum) untuk mencegah penyebaran.</p>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="accordion-item">
+                    <a class="item-content item-link" href="#">
+                      <div class="item-inner">
+                        <div class="item-title">Apakah ASI Ibu terinfeksi aman untuk bayi ?</div>
+                      </div>
+                    </a>
+                    <div class="accordion-item-content">
+                      <div class="block">
+                        <p>Semua ibu yang tinggal di wilayah terpengaruh atau memiliki risiko, khususnya yang menunjukkan gejala demam, batuk dan sesak napas harus mencari pengobatan secepat mungkin dan mengikuti perintah tenaga kesehatan. Karena pentingnya pemberian ASI, ibu yang sedang menyusui dapat melanjutkan ASI sambil terus melakukan tindakan-tindakan pencegahan. Sebagaimana virus-virus pernapasan yang lain, virus corona baru tidak menular melalui cairan ASI. Bagi ibu atau siapapun yang mengalami gejala demam, rasa lelah dan batuk kering, yang perlu berinteraksi dengan anak, perhatikan hal-hal berikut.</p>
+                          
+                        <p>Gunakan masker saat berada dekat anak (termasuk saat memberi ASI), Cuci tangan pakai sabun sebelum dan sesudah kontak dengan anak (termasuk memberi ASI), Bersihkan permukaan benda-benda yang tersentuh tangan dengan lap, tisu atau cairan disinfektan., Bila ibu terlalu lemah, sebaiknya perah ASI dan berikan pada bayi dengan cangkir atau sendok bersih, sambil tetap mengikuti tindakan-tindakan pencegahan di atas.</p>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="accordion-item">
+                    <a class="item-content item-link" href="#">
+                      <div class="item-inner">
+                        <div class="item-title">Apakah cuaca dingin bisa bunuh corona ?</div>
+                      </div>
+                    </a>
+                    <div class="accordion-item-content">
+                      <div class="block">
+                        <p>Tidak ada bukti yang menunjukkan cuaca dingin dapat membunuh virus corona baru atau penyakit lainnya. Terlepas dari suhu eksternal atau cuaca suhu tubuh manusia normal tetap sekitar 36,5° C hingga 37° C. Cara paling efektif untuk melindungi diri Anda dari virus corona (COVID-19) adalah dengan sering mencuci tangan pakai sabun dan air mengalir atau bila tidak tersedia, cairan pembersih berbahan alkohol (minimal 60%).</p>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="accordion-item">
+                    <a class="item-content item-link" href="#">
+                      <div class="item-inner">
+                        <div class="item-title">Apakah ibu hamil bisa menularkan janin ?</div>
+                      </div>
+                    </a>
+                    <div class="accordion-item-content">
+                      <div class="block">
+                        <p>Sampai saat ini tidak ada bukti kuat yang menunjukkan virus menular dari ibu ke janinnya atau mempengaruhi bayinya nanti. Masalah ini masih dalam tahap penelitian. Yang penting, ibu hamil harus melakukan tindakan pencegahan untuk melindungi diri dari paparan virus dan mencari pengobatan secepatnya bila mengalami gejala-gejala seperti demam, batuk atau sesak napas.</p>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="accordion-item">
+                    <a class="item-content item-link" href="#">
+                      <div class="item-inner">
+                        <div class="item-title">Apakah bawang putih bisa mencegah corona ?</div>
+                      </div>
+                    </a>
+                    <div class="accordion-item-content">
+                      <div class="block">
+                        <p>Bawang putih adalah makanan sehat yang mungkin memiliki beberapa sifat antimikroba. Namun, tidak ada bukti bahwa makan bawang putih telah melindungi orang dari virus corona (COVID-19).</p>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="accordion-item">
+                    <a class="item-content item-link" href="#">
+                      <div class="item-inner">
+                        <div class="item-title">Apakah mandi air panas mencegah corona ?</div>
+                      </div>
+                    </a>
+                    <div class="accordion-item-content">
+                      <div class="block">
+                        <p>Mandi air panas tidak dapat mencegah Anda dari COVID-19. Suhu tubuh normal Anda tetap di sekitar 36,5° C hingga 37° C terlepas dari suhu air. Sebenarnya, mandi dengan air yang sangat panas bisa berbahaya, karena bisa membakar kulit.</p>
+
+                        <p>Cara terbaik untuk melindungi diri dari COVID-19 adalah dengan sering mencuci tangan pakai sabun dan air mengalir atau bila tidak tersedia, cairan permbersih berbahan alkohol (60%). Dengan melakukan ini, Anda menghilangkan virus yang mungkin ada di tangan dan menghindari infeksi yang dapat terjadi karena menyentuh mata, mulut, dan hidung.</p>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <script src="js/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="lib/framework7/js/framework7.min.js"></script>
     <script type="text/javascript" src="js/app.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDwtxQN8hMp0bg4pxx9lvpeU43J1tlitxY&sensor=true&libraries=places,geometry"></script>
-    <script src="js/signature.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDwtxQN8hMp0bg4pxx9lvpeU43J1tlitxY&libraries=places,geometry"></script>
   </body>
 </html>

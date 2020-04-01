@@ -1,6 +1,14 @@
 cordova.define('cordova/plugin_list', function(require, exports, module) {
   module.exports = [
     {
+      "id": "cordova-plugin-btprinter.BluetoothPrinter",
+      "file": "plugins/cordova-plugin-btprinter/www/BluetoothPrinter.js",
+      "pluginId": "cordova-plugin-btprinter",
+      "clobbers": [
+        "BTPrinter"
+      ]
+    },
+    {
       "id": "cordova-plugin-geolocation.geolocation",
       "file": "plugins/cordova-plugin-geolocation/www/android/geolocation.js",
       "pluginId": "cordova-plugin-geolocation",
@@ -15,26 +23,18 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
       "runs": true
     },
     {
-      "id": "cordova-plugin-printer.Printer",
-      "file": "plugins/cordova-plugin-printer/www/printer.js",
-      "pluginId": "cordova-plugin-printer",
+      "id": "cordova-plugin-splashscreen.SplashScreen",
+      "file": "plugins/cordova-plugin-splashscreen/www/splashscreen.js",
+      "pluginId": "cordova-plugin-splashscreen",
       "clobbers": [
-        "cordova.plugins.printer"
-      ]
-    },
-    {
-      "id": "cordova-plugin-btprinter.BluetoothPrinter",
-      "file": "plugins/cordova-plugin-btprinter/www/BluetoothPrinter.js",
-      "pluginId": "cordova-plugin-btprinter",
-      "clobbers": [
-        "BTPrinter"
+        "navigator.splashscreen"
       ]
     }
   ];
   module.exports.metadata = {
+    "cordova-plugin-btprinter": "0.0.1-dev",
     "cordova-plugin-geolocation": "4.0.2",
-    "cordova-plugin-printer": "0.8.0",
-    "cordova-plugin-whitelist": "1.3.4",
-    "cordova-plugin-btprinter": "0.0.1-dev"
+    "cordova-plugin-splashscreen": "5.0.3",
+    "cordova-plugin-whitelist": "1.3.4"
   };
 });
