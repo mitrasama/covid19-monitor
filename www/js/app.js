@@ -76,7 +76,10 @@ $$(document).on('page:init', '.page[data-name="home"]', function (e) {
       success: function(data){
         var html = '';
           var i;
+          var total = 0;
+          var batas = 0;
           for(i=0; i<data.length; i++){
+            total += data[i].attributes.Kasus_Posi;
             html += '<tr>'+
                       '<td class="checkbox-cell">'+
                       '<i class="fa fa-medkit fa-lg"></i>'+
@@ -87,6 +90,8 @@ $$(document).on('page:init', '.page[data-name="home"]', function (e) {
                     '</tr>';
           }
           $('#show_data').html(html);
+          batas = total * 0.2;
+          console.log(batas)
       }
     });
   }
